@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+</head>
+<body>
+<h1>{{ name }}</h1>
+<p>姓名：{{ n_name }}</p>
+<p>年龄：{{ age }}</p>
+
+<p>技术特点：
+    {% for i in fancy %}
+    <h1>
+        <span>{{ i }}</span>
+    </h1>
+
+    <p>
+        {% for j in fancy %}
+            {{ j }} {% if not forloop.last %} | {% endif %}
+        {% endfor %}
+    </p>
+    {% endfor %}
+</p>
+
+<p>技术特点：
+    {{ fancy.0 }},{{ fancy.1 }}
+</p>
+<h1>通过字典对象取值</h1>
+<a>博客地址：{{ blog.url }}</a>
+<p>头像</p>
+<img width="20%" height="20%" src="{{ blog.img }}">
+<h1>获取类的属性和方法值</h1>
+<p>关注数：{{ myblog.guanzhu }}</p>
+<p>粉丝数：{{ myblog.fensi }}</p>
+
+</body>
+</html>
